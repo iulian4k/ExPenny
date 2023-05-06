@@ -13,10 +13,6 @@ def get_db():
             # port="5432"
         )
 
-        #g.db.row_factory = psycopg2.Row
-        # psycopg2.extensions.register_type(psycopg2.extensions.UUID)
-
-        #enable automatic type detection and conversion
         psycopg2.extensions.register_adapter(dict, psycopg2.extras.Json)
         psycopg2.extensions.register_adapter(list, psycopg2.extras.Json)
     
